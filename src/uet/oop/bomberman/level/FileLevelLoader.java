@@ -9,6 +9,7 @@ import uet.oop.bomberman.entities.character.enemy.Oneal;
 import uet.oop.bomberman.entities.tile.Grass;
 import uet.oop.bomberman.entities.tile.Wall;
 import uet.oop.bomberman.entities.tile.destroyable.Brick;
+import uet.oop.bomberman.entities.tile.item.BombItem;
 import uet.oop.bomberman.entities.tile.item.SpeedItem;
 import uet.oop.bomberman.exceptions.LoadLevelException;
 import uet.oop.bomberman.graphics.Screen;
@@ -16,6 +17,7 @@ import uet.oop.bomberman.graphics.Sprite;
 
 import java.io.*;
 import java.net.URL;
+import java.sql.SQLOutput;
 
 public class FileLevelLoader extends LevelLoader {
 
@@ -96,35 +98,6 @@ public class FileLevelLoader extends LevelLoader {
 
 	}
 
-	public void loadLevel1(int level) {
-		// TODO: đọc dữ liệu từ tệp cấu hình /levels/Level{level}.txt
-		// TODO: cập nhật các giá trị đọc được vào _width, _height, _level, _map
-		String pa = "/levels/Level" + level + ".txt";
-		try {
-			InputStream is = this.getClass().getResourceAsStream(pa);
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			System.out.println(is.toString());
-			String line = br.readLine();
-			int vt1 = 0, vt2 = 0;
-			for (int i = 0; i < line.length(); i++) {
-				if (line.charAt(i) == ' ' && vt1 == 0) vt1 = i;
-				else if (line.charAt(i) == ' ') vt2 = i;
-			}
-			_level = Integer.parseInt(line.substring(0, vt1));
-			_height = Integer.parseInt(line.substring(vt1 + 1, vt2));
-			_width = Integer.parseInt(line.substring(vt2 + 1, line.length()));
-
-			System.out.println(_level + ", " + _height + ", " + _width);
-			_map = new char[_width][_height];
-			for (int i = 0; i < _height; i++) {
-				_map[i] = br.readLine().toCharArray();
-			}
-			is.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 
 	@Override
 	public void createEntities() {
@@ -142,7 +115,8 @@ public class FileLevelLoader extends LevelLoader {
 					int pos = i +j * _width;
 					Sprite sprite = Sprite.wall;
 					_board.addEntity(pos, new Wall(i, j, sprite));
-				} else if (_map[i][j] == '*') {
+				}
+				else if (_map[i][j] == '*') {
 					_board.addEntity(i + j * _width,
 							new LayeredEntity(i, j,
 									new Grass(i, j, Sprite.grass),
@@ -166,6 +140,13 @@ public class FileLevelLoader extends LevelLoader {
 					_board.addCharacter(new Oneal(Coordinates.tileToPixel(i), Coordinates.tileToPixel(j) + Game.TILES_SIZE, _board));
 					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
 				}
+//				else if (_map[i][j] =='b'){
+////					_board.addEntity(i + j *_width,new BombItem(i,j, Sprite.));
+//
+//				}
+//				else if (_map[i][j] =='f'){}
+//				else if (_map[i][j] =='s'){}
+
 				else {
 					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
 

@@ -112,7 +112,7 @@ public class Bomb extends AnimatedEntitiy {
 	public boolean collide(Entity e) {
         // TODO: xử lý khi Bomber đi ra sau khi vừa đặt bom (_allowedToPassThru)
         // TODO: xử lý va chạm với Flame của Bomb khác
-
+		_allowedToPassThru = true;
         if(e instanceof Bomber) {
             double x = e.getX() - Coordinates.tileToPixel(getX());
             double y = e.getY() - Coordinates.tileToPixel(getY());

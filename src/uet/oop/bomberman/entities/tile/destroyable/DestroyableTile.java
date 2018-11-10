@@ -40,7 +40,8 @@ public class DestroyableTile extends Tile {
 		// TODO: xử lý khi va chạm với Flame
 
 		if (e instanceof Flame) {
-			this.destroy();
+			System.out.println("bi pha!");
+			destroy();
 		}
 		return false;
 	}

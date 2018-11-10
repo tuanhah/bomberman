@@ -80,9 +80,9 @@ public class Flame extends Entity {
 
 			Entity a = _board.getEntity(x, y,null);
 
-//			if(a instanceof Bomber) ++radius; //explosion has to be below the mob
+			if(a instanceof Bomber) ++radius; //neu k tang radius, flame ma bomber no chet se bi giam di 1 flamesegment
 
-			if(a.collide(this) == false) //cannot pass thru
+			if(a.collide(this) == false) //chan
 				break;
 
 			++radius;
