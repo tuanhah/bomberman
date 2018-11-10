@@ -1,9 +1,11 @@
 package uet.oop.bomberman.entities.bomb;
 
 import uet.oop.bomberman.Board;
+import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.AnimatedEntitiy;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
+import uet.oop.bomberman.entities.character.Character;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.level.Coordinates;
@@ -77,11 +79,21 @@ public class Bomb extends AnimatedEntitiy {
 		_exploded = true;
 		
 		// TODO: xử lý khi Character đứng tại vị trí Bomb
-		_allowedToPassThru = true;
+        int x = (int)_x;
+        int y = (int)_y;
+        Character character = _board.getCharacterAtExcluding(x,y,null);
+        if (character != null) character.kill();
 
 
 
 		// TODO: tạo các Flame
+
+        _flames = new Flame[4];
+        for (int i =0 ; i <_flames.length ; i ++)
+            _flames[i] = new Flame(x,y,i, Game.getBombRadius(),_board);
+
+
+
 	}
 	
 	public FlameSegment flameAt(int x, int y) {
