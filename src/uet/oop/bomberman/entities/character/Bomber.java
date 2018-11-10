@@ -4,6 +4,9 @@ import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.bomb.Bomb;
+import uet.oop.bomberman.entities.bomb.Flame;
+import uet.oop.bomberman.entities.bomb.FlameSegment;
+import uet.oop.bomberman.entities.character.enemy.Enemy;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.input.Keyboard;
@@ -75,10 +78,30 @@ public class Bomber extends Character {
         // TODO: _timeBetweenPutBombs dùng để ngăn chặn Bomber đặt 2 Bomb cùng tại 1 vị trí trong 1 khoảng thời gian quá ngắn
         // TODO: nếu 3 điều kiện trên thỏa mãn thì thực hiện đặt bom bằng placeBomb()
         // TODO: sau khi đặt, nhớ giảm số lượng Bomb Rate và reset _timeBetweenPutBombs về 0
+
+        if(_input.space && Game.getBombRate() > 0 && _timeBetweenPutBombs <= 0) {
+
+
+
+            int yt = Coordinates.pixelToTile(_y -8);
+            int xt = Coordinates.pixelToTile(_x+8);
+
+            this.placeBomb(xt,yt);
+
+            Game.addBombRate(-1);
+
+            _timeBetweenPutBombs = 30;
+        }
+
+
+
+
     }
 
     protected void placeBomb(int x, int y) {
         // TODO: thực hiện tạo đối tượng bom, đặt vào vị trí (x, y)
+        Bomb bomb = new Bomb(x,y,_board);
+        _board.addBomb(bomb);
     }
 
     private void clearBombs() {
@@ -179,6 +202,24 @@ public class Bomber extends Character {
     public boolean collide(Entity e) {
         // TODO: xử lý va chạm với Flame
         // TODO: xử lý va chạm với Enemy
+//
+        if(e instanceof Flame) {
+            kill();
+            return false;
+        }
+
+//        if (e instanceof FlameSegment){
+//            kill();
+//            return false;
+//        }
+
+        if(e instanceof Enemy) {
+            kill();
+            return false;
+        }
+
+
+
 
         return true;
     }
