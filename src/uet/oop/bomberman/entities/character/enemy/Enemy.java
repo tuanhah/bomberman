@@ -35,6 +35,7 @@ public abstract class Enemy extends Character {
 		_speed = speed;
 		
 		MAX_STEPS = Game.TILES_SIZE / _speed;
+//			MAX_STEPS = 16;
 		rest = (MAX_STEPS - (int) MAX_STEPS) / MAX_STEPS;
 		_steps = MAX_STEPS;
 		

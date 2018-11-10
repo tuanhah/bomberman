@@ -14,9 +14,7 @@ import uet.oop.bomberman.exceptions.LoadLevelException;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 
 public class FileLevelLoader extends LevelLoader {
@@ -37,13 +35,17 @@ public class FileLevelLoader extends LevelLoader {
 		// TODO: cập nhật các giá trị đọc được vào _width, _height, _level, _map
 		String path = new String();
 
-		path = "levels/level" + String.valueOf(level)+".txt";
+		path = "/levels/Level" + String.valueOf(level)+".txt";
 
 		BufferedReader br = null;
 		FileReader fr = null;
 		try {
 
-			URL fullPath = this.getClass().getClassLoader().getResource('/'+path);
+			InputStream is = this.getClass().getResourceAsStream(path);
+			br = new BufferedReader(new InputStreamReader(is));
+
+//			URL fullPath = this.getClass().getClassLoader().getResource('/'+path);
+
 //			System.out.println(fullPath);
 //			System.out.println(path);
 
@@ -51,9 +53,10 @@ public class FileLevelLoader extends LevelLoader {
 
 
 //			fr = new FileReader(fullPath);
-			fr = new FileReader("/home/tuan/Desktop/Workspace/bomberman/res/levels/Level1.txt");
-			br = new BufferedReader(fr);
-
+//			fr = new FileReader("/home/tuan/Desktop/Workspace/bomberman/res/levels/Level1.txt");
+//			br = new BufferedReader(fr);
+//			InputStream is = this.getClass().getResourceAsStream(path);
+//			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
 			String[] option = br.readLine().split(" ");
 			_width = Integer.parseInt(option[2]);
@@ -63,9 +66,7 @@ public class FileLevelLoader extends LevelLoader {
 			_map = new char[_width][_height];
 			for (int i = 0; i<_height; i++){
 				String line = br.readLine();
-//				System.out.println(line.charAt(i));
 				for (int j = 0; j<_width; j++){
-//					Syst
 					_map[j][i] = line.charAt(j);
 
 				}
@@ -94,6 +95,36 @@ public class FileLevelLoader extends LevelLoader {
 		}
 
 	}
+
+	public void loadLevel1(int level) {
+		// TODO: đọc dữ liệu từ tệp cấu hình /levels/Level{level}.txt
+		// TODO: cập nhật các giá trị đọc được vào _width, _height, _level, _map
+		String pa = "/levels/Level" + level + ".txt";
+		try {
+			InputStream is = this.getClass().getResourceAsStream(pa);
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			System.out.println(is.toString());
+			String line = br.readLine();
+			int vt1 = 0, vt2 = 0;
+			for (int i = 0; i < line.length(); i++) {
+				if (line.charAt(i) == ' ' && vt1 == 0) vt1 = i;
+				else if (line.charAt(i) == ' ') vt2 = i;
+			}
+			_level = Integer.parseInt(line.substring(0, vt1));
+			_height = Integer.parseInt(line.substring(vt1 + 1, vt2));
+			_width = Integer.parseInt(line.substring(vt2 + 1, line.length()));
+
+			System.out.println(_level + ", " + _height + ", " + _width);
+			_map = new char[_width][_height];
+			for (int i = 0; i < _height; i++) {
+				_map[i] = br.readLine().toCharArray();
+			}
+			is.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	@Override
 	public void createEntities() {
