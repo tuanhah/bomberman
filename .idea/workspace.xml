@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a287f5d-d40f-41d6-987e-02a495dbdc13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/LayeredEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/LayeredEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Bomb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/FlameSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/FlameSegment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/uet/oop/bomberman/level/FileLevelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/uet/oop/bomberman/level/FileLevelLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/LayeredEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/LayeredEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/bomb/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/bomb/Bomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/bomb/Flame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/bomb/Flame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/bomb/FlameSegment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/bomb/FlameSegment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,20 +25,24 @@
     <session id="1306600336">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.63" value="1" />
+          <entry key="project.open.time.65" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.85" value="1" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="81" />
+          <entry key="java" value="90" />
           <entry key="txt" value="8" />
           <entry key="xml" value="2" />
         </counts>
@@ -40,20 +50,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="81" />
+          <entry key="JAVA" value="90" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1843" />
+          <entry key="java" value="2043" />
           <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1843" />
+          <entry key="JAVA" value="2043" />
           <entry key="PLAIN_TEXT" value="24" />
         </counts>
       </usages-collector>
@@ -61,23 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/character/Bomber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="168" column="37" lean-forward="true" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Bomb.java">
+        <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+            <state relative-caret-position="250">
+              <caret line="119" selection-start-line="119" selection-end-line="119" />
             </state>
           </provider>
         </entry>
@@ -108,11 +106,12 @@
         <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/character/enemy/Enemy.java" />
         <option value="$PROJECT_DIR$/src/uet/oop/bomberman/Board.java" />
         <option value="$PROJECT_DIR$/res/levels/Level1.txt" />
-        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java" />
-        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.java" />
-        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/FlameSegment.java" />
         <option value="$PROJECT_DIR$/src/uet/oop/bomberman/level/FileLevelLoader.java" />
+        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/FlameSegment.java" />
         <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Bomb.java" />
+        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.java" />
+        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/LayeredEntity.java" />
+        <option value="$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java" />
       </list>
     </option>
   </component>
@@ -136,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,6 +265,7 @@
       </pane>
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,18 +322,21 @@
       <workItem from="1541772685539" duration="3282000" />
       <workItem from="1541776239027" duration="993000" />
       <workItem from="1541777519865" duration="8081000" />
-      <workItem from="1541818266750" duration="12744000" />
+      <workItem from="1541818266750" duration="13210000" />
+      <workItem from="1541906819387" duration="321000" />
+      <workItem from="1542005659545" duration="342000" />
+      <workItem from="1542006348448" duration="3610000" />
+      <workItem from="1542010606663" duration="224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30082000" />
+    <option name="totallyTimeSpent" value="35045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27091634" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29003984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -343,7 +345,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27173913" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27173913" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -437,10 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="197" column="1" lean-forward="true" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
-          <folding>
-            <element signature="e#3762#3763#0" expanded="true" />
-            <element signature="e#3782#3783#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -493,45 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/Brick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-          <folding>
-            <element signature="e#815#816#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/FlameSegment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="79" column="20" lean-forward="true" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="82" column="77" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/levels/Level1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -564,36 +523,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/level/FileLevelLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="137" column="17" lean-forward="true" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/character/Bomber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="168" column="37" lean-forward="true" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="2310">
+          <caret line="168" column="37" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/DestroyableTile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/tile/destroyable/Brick.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Bomb.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="114" column="34" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
+        <state relative-caret-position="1425">
+          <caret line="125" column="9" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/level/FileLevelLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="122" column="45" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/FlameSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="699">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/LayeredEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/uet/oop/bomberman/entities/bomb/Flame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>

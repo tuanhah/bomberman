@@ -6,6 +6,7 @@ import uet.oop.bomberman.entities.AnimatedEntitiy;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.character.Character;
+import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.level.Coordinates;
@@ -128,6 +129,7 @@ public class Bomb extends AnimatedEntitiy {
             explode();
             return true;
         }
+
         return false;
 	}
 }

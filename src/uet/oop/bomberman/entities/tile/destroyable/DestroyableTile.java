@@ -42,8 +42,10 @@ public class DestroyableTile extends Tile {
 		if (e instanceof Flame) {
 			System.out.println("bi pha!");
 			destroy();
+			return true;
 		}
 		return false;
+
 	}
 	
 	public void addBelowSprite(Sprite sprite) {

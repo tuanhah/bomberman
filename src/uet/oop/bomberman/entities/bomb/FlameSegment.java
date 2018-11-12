@@ -2,6 +2,7 @@ package uet.oop.bomberman.entities.bomb;
 
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Character;
+import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.entities.tile.destroyable.DestroyableTile;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
@@ -74,9 +75,7 @@ public class FlameSegment extends Entity {
 			((Character) e).kill();
 
 		}
-//		if (e instanceof DestroyableTile) {
-//			((DestroyableTile) e).destroy();
-//		}
+
 		return true;
 	}
 	

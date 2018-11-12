@@ -1,5 +1,7 @@
 package uet.oop.bomberman.entities;
 
+import uet.oop.bomberman.entities.bomb.Flame;
+import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.entities.tile.destroyable.DestroyableTile;
 import uet.oop.bomberman.graphics.Screen;
 
@@ -12,6 +14,7 @@ import java.util.LinkedList;
 public class LayeredEntity extends Entity {
 	
 	protected LinkedList<Entity> _entities = new LinkedList<>();
+	private boolean canpass = false;
 	
 	public LayeredEntity(int x, int y, Entity ... entities) {
 		_x = x;
@@ -58,7 +61,13 @@ public class LayeredEntity extends Entity {
 	@Override
 	public boolean collide(Entity e) {
 		// TODO: lấy entity trên cùng ra để xử lý va chạm
-		return false;
+		if (this.getTopEntity() instanceof Brick && e instanceof Flame){
+			Entity e1 = this.getTopEntity();
+			((Brick)e1).destroy();
+			canpass = true;
+
+		}
+		return canpass;
 	}
 
 }

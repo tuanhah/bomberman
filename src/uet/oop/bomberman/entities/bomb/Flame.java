@@ -2,7 +2,10 @@ package uet.oop.bomberman.entities.bomb;
 
 import uet.oop.bomberman.Board;
 import uet.oop.bomberman.entities.Entity;
+import uet.oop.bomberman.entities.LayeredEntity;
 import uet.oop.bomberman.entities.character.Bomber;
+import uet.oop.bomberman.entities.tile.Wall;
+import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.graphics.Screen;
 
 public class Flame extends Entity {
@@ -81,12 +84,14 @@ public class Flame extends Entity {
 			Entity a = _board.getEntity(x, y,null);
 
 			if(a instanceof Bomber) ++radius; //neu k tang radius, flame ma bomber no chet se bi giam di 1 flamesegment
-
-			if(a.collide(this) == false) //chan
+            System.out.println(a.toString());
+			if(a.collide(this) == false ) //chan
 				break;
 
 			++radius;
 		}
+//        System.out.println(_direction);
+        System.out.println(radius);
 
 		return radius;
 	}
@@ -113,6 +118,6 @@ public class Flame extends Entity {
 	public boolean collide(Entity e) {
 		// TODO: xử lý va chạm với Bomber, Enemy. Chú ý đối tượng này có vị trí chính là vị trí của Bomb đã nổ
 
-		return true;
+        return true;
 	}
 }
