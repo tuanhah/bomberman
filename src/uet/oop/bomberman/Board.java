@@ -92,7 +92,7 @@ public class Board implements IRender {
 	public void nextLevel() {
 		loadLevel(_levelLoader.getLevel() + 1);
 	}
-	public void playSound(String path) {
+	public static void playSound(String path) {
 		try {
 			com.sun.javafx.application.PlatformImpl.startup(()->{});
 			Media hit = new Media(new File(path).toURI().toString());

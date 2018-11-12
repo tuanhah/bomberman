@@ -29,6 +29,7 @@ public class FlameItem extends Item {
 
 
 	public void use(){
+
 		Game.addBombRadius(1);
 	}
 

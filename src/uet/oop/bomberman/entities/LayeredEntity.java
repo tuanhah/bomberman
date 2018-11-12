@@ -1,5 +1,7 @@
 package uet.oop.bomberman.entities;
 
+
+import uet.oop.bomberman.Board;
 import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.tile.Portal;
@@ -11,7 +13,10 @@ import uet.oop.bomberman.entities.tile.item.Item;
 import uet.oop.bomberman.entities.tile.item.SpeedItem;
 import uet.oop.bomberman.graphics.Screen;
 
+import java.net.URL;
 import java.util.LinkedList;
+
+import static uet.oop.bomberman.Board.playSound;
 
 /**
  * Chứa và quản lý nhiều Entity tại cùng một vị trí
@@ -79,10 +84,13 @@ public class LayeredEntity extends Entity {
 		}
 		if (this.getTopEntity() instanceof Item && e instanceof Bomber){
 			Entity item = this.getTopEntity();
+			URL resource = getClass().getResource("/music/upgrade.mp3");
+			System.out.println(resource.getPath());
+			playSound(resource.getPath());
 			item.remove();
-			if (item instanceof FlameItem) ((FlameItem) item).use();
-			if (item instanceof BombItem) ((BombItem) item).use();
-			if (item instanceof SpeedItem) ((SpeedItem) item).use();
+			if (item instanceof FlameItem) ( (FlameItem) item).use();
+			if (item instanceof BombItem) ( (BombItem) item).use();
+			if (item instanceof SpeedItem) ( (SpeedItem) item).use();
 
 		}
 		if (this.getTopEntity() instanceof Portal && e instanceof Bomber){
