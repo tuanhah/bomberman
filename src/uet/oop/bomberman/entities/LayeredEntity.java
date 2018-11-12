@@ -1,6 +1,8 @@
 package uet.oop.bomberman.entities;
 
 import uet.oop.bomberman.entities.bomb.Flame;
+import uet.oop.bomberman.entities.character.Bomber;
+import uet.oop.bomberman.entities.tile.Portal;
 import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.entities.tile.destroyable.DestroyableTile;
 import uet.oop.bomberman.entities.tile.item.BombItem;
@@ -75,12 +77,16 @@ public class LayeredEntity extends Entity {
 			canpass = true;
 
 		}
-		if (this.getTopEntity() instanceof Item){
+		if (this.getTopEntity() instanceof Item && e instanceof Bomber){
 			Entity item = this.getTopEntity();
 			item.remove();
 			if (item instanceof FlameItem) ((FlameItem) item).use();
 			if (item instanceof BombItem) ((BombItem) item).use();
 			if (item instanceof SpeedItem) ((SpeedItem) item).use();
+
+		}
+		if (this.getTopEntity() instanceof Portal && e instanceof Bomber){
+			((Portal)this.getTopEntity()).collide(e);
 		}
 		return canpass;
 	}

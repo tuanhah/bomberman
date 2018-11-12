@@ -164,7 +164,7 @@ public class FileLevelLoader extends LevelLoader {
 				else if (_map[i][j] == 'x'){
 					_board.addEntity(i + j*_width, new LayeredEntity(i, j,
 							new Grass(i ,j, Sprite.grass),
-							new Portal(i ,j,Sprite.portal),
+							new Portal(i ,j,_board,Sprite.portal),
 							new Brick(i ,j, Sprite.brick)) );
 				}
 				else {

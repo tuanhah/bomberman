@@ -88,7 +88,7 @@ public class Bomb extends AnimatedEntitiy {
 		Entity entity = _board.getEntityAt(x,y);
 		if (entity != null) {
 			if (entity instanceof Character) ((Character) entity).kill();
-			if (entity instanceof Bomb) ((Bomb) entity).explode();
+//			if (entity instanceof Bomb) ((Bomb) entity).explode();
 		}
 
 
