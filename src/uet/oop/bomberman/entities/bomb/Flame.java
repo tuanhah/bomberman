@@ -87,7 +87,7 @@ public class Flame extends Entity {
 //            System.out.println(a.toString());
 			if(a.collide(this) == false ) //chan
 				break;
-			if (a.collide(this) == true && (a instanceof LayeredEntity)) {
+			if (a.collide(this) == true && (a instanceof LayeredEntity) && ((LayeredEntity) a).getLength()>1) {
 
 				radius ++;
 				break;
