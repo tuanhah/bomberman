@@ -7,9 +7,11 @@ import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.character.enemy.Balloon;
 import uet.oop.bomberman.entities.character.enemy.Oneal;
 import uet.oop.bomberman.entities.tile.Grass;
+import uet.oop.bomberman.entities.tile.Portal;
 import uet.oop.bomberman.entities.tile.Wall;
 import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.entities.tile.item.BombItem;
+import uet.oop.bomberman.entities.tile.item.FlameItem;
 import uet.oop.bomberman.entities.tile.item.SpeedItem;
 import uet.oop.bomberman.exceptions.LoadLevelException;
 import uet.oop.bomberman.graphics.Screen;
@@ -140,13 +142,31 @@ public class FileLevelLoader extends LevelLoader {
 					_board.addCharacter(new Oneal(Coordinates.tileToPixel(i), Coordinates.tileToPixel(j) + Game.TILES_SIZE, _board));
 					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
 				}
-//				else if (_map[i][j] =='b'){
-////					_board.addEntity(i + j *_width,new BombItem(i,j, Sprite.));
-//
-//				}
-//				else if (_map[i][j] =='f'){}
-//				else if (_map[i][j] =='s'){}
+				else if (_map[i][j] == 'f'){
+					_board.addEntity(i + j*_width, new LayeredEntity(i, j,
+							new Grass(i ,j, Sprite.grass),
+							new FlameItem(i ,j,Sprite.powerup_flames),
+							new Brick(i ,j, Sprite.brick)) );
+				}
+				else if (_map[i][j] == 's'){
+					_board.addEntity(i + j*_width, new LayeredEntity(i, j,
+							new Grass(i ,j, Sprite.grass),
+							new SpeedItem(i ,j,Sprite.powerup_speed),
+							new Brick(i ,j, Sprite.brick)) );
+				}
+				else if (_map[i][j] == 'b'){
+					_board.addEntity(i + j*_width, new LayeredEntity(i, j,
+							new Grass(i ,j, Sprite.grass),
+							new BombItem(i ,j,Sprite.powerup_bombs),
+							new Brick(i ,j, Sprite.brick)) );
+				}
 
+				else if (_map[i][j] == 'x'){
+					_board.addEntity(i + j*_width, new LayeredEntity(i, j,
+							new Grass(i ,j, Sprite.grass),
+							new Portal(i ,j,Sprite.portal),
+							new Brick(i ,j, Sprite.brick)) );
+				}
 				else {
 					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
 

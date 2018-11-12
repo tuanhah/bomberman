@@ -84,14 +84,18 @@ public class Flame extends Entity {
 			Entity a = _board.getEntity(x, y,null);
 
 			if(a instanceof Bomber) ++radius; //neu k tang radius, flame ma bomber no chet se bi giam di 1 flamesegment
-            System.out.println(a.toString());
+//            System.out.println(a.toString());
 			if(a.collide(this) == false ) //chan
 				break;
+			if (a.collide(this) == true && (a instanceof LayeredEntity)) {
 
+				radius ++;
+				break;
+			}
 			++radius;
 		}
 //        System.out.println(_direction);
-        System.out.println(radius);
+//        System.out.println(radius);
 
 		return radius;
 	}

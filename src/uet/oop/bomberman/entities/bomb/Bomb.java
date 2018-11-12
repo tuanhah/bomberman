@@ -82,14 +82,20 @@ public class Bomb extends AnimatedEntitiy {
 		// TODO: xử lý khi Character đứng tại vị trí Bomb
         int x = (int)_x;
         int y = (int)_y;
-        Character character = _board.getCharacterAtExcluding(x,y,null);
-        if (character != null) character.kill();
+
+//        Character character = _board.getCharacterAtExcluding(x,y,null);
+//        if (character != null) character.kill();
+		Entity entity = _board.getEntityAt(x,y);
+		if (entity != null) {
+			if (entity instanceof Character) ((Character) entity).kill();
+			if (entity instanceof Bomb) ((Bomb) entity).explode();
+		}
 
 
+				// TODO: tạo các Flame
 
-		// TODO: tạo các Flame
+		_flames = new Flame[4];
 
-        _flames = new Flame[4];
         for (int i =0 ; i <_flames.length ; i ++)
             _flames[i] = new Flame(x,y,i, Game.getBombRadius(),_board);
 

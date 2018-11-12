@@ -3,10 +3,13 @@ package uet.oop.bomberman.entities.character;
 import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.Entity;
+import uet.oop.bomberman.entities.LayeredEntity;
 import uet.oop.bomberman.entities.bomb.Bomb;
 import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.bomb.FlameSegment;
 import uet.oop.bomberman.entities.character.enemy.Enemy;
+import uet.oop.bomberman.entities.tile.item.FlameItem;
+import uet.oop.bomberman.entities.tile.item.Item;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.input.Keyboard;
@@ -167,6 +170,11 @@ public class Bomber extends Character {
             double yt = Coordinates.pixelToTile((_y + y) + c / 2 * 12 - 13) ;
 
             Entity a = _board.getEntity(xt, yt, this);
+//            System.out.println(a.toString());
+//            if ((a instanceof LayeredEntity)  && (((LayeredEntity)a).getTopEntity() instanceof Item))
+//            {
+//                System.out.println("B");
+//            }
 
             if(!a.collide(this))
                 return false;
@@ -208,15 +216,12 @@ public class Bomber extends Character {
             return false;
         }
 
-//        if (e instanceof FlameSegment){
-//            kill();
-//            return false;
-//        }
 
         if(e instanceof Enemy) {
             kill();
             return false;
         }
+
 
 
 

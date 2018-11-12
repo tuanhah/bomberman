@@ -3,6 +3,10 @@ package uet.oop.bomberman.entities;
 import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.entities.tile.destroyable.DestroyableTile;
+import uet.oop.bomberman.entities.tile.item.BombItem;
+import uet.oop.bomberman.entities.tile.item.FlameItem;
+import uet.oop.bomberman.entities.tile.item.Item;
+import uet.oop.bomberman.entities.tile.item.SpeedItem;
 import uet.oop.bomberman.graphics.Screen;
 
 import java.util.LinkedList;
@@ -35,6 +39,10 @@ public class LayeredEntity extends Entity {
 		clearRemoved();
 		getTopEntity().update();
 	}
+
+	public int getLength(){
+		return _entities.size();
+	}
 	
 	@Override
 	public void render(Screen screen) {
@@ -66,6 +74,13 @@ public class LayeredEntity extends Entity {
 			((Brick)e1).destroy();
 			canpass = true;
 
+		}
+		if (this.getTopEntity() instanceof Item){
+			Entity item = this.getTopEntity();
+			item.remove();
+			if (item instanceof FlameItem) ((FlameItem) item).use();
+			if (item instanceof BombItem) ((BombItem) item).use();
+			if (item instanceof SpeedItem) ((SpeedItem) item).use();
 		}
 		return canpass;
 	}
