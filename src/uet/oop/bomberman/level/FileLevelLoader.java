@@ -4,8 +4,7 @@ import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.LayeredEntity;
 import uet.oop.bomberman.entities.character.Bomber;
-import uet.oop.bomberman.entities.character.enemy.Balloon;
-import uet.oop.bomberman.entities.character.enemy.Oneal;
+import uet.oop.bomberman.entities.character.enemy.*;
 import uet.oop.bomberman.entities.tile.Grass;
 import uet.oop.bomberman.entities.tile.Portal;
 import uet.oop.bomberman.entities.tile.Wall;
@@ -149,6 +148,18 @@ public class FileLevelLoader extends LevelLoader {
 					_board.addCharacter(new Oneal(Coordinates.tileToPixel(i), Coordinates.tileToPixel(j) + Game.TILES_SIZE, _board));
 					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
 				}
+				else if (_map[i][j] == '3'){
+					_board.addCharacter(new Doll(Coordinates.tileToPixel(i), Coordinates.tileToPixel(j) + Game.TILES_SIZE, _board));
+					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
+				}
+				else if (_map[i][j] == '4'){
+					_board.addCharacter(new Minvo(Coordinates.tileToPixel(i), Coordinates.tileToPixel(j) + Game.TILES_SIZE, _board));
+					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
+				}
+				else if (_map[i][j] == '5'){
+					_board.addCharacter(new Kondoria(Coordinates.tileToPixel(i), Coordinates.tileToPixel(j) + Game.TILES_SIZE, _board));
+					_board.addEntity(i + j * _width, new Grass(i, j, Sprite.grass));
+				}
 				else if (_map[i][j] == 'f'){
 					_board.addEntity(i + j*_width, new LayeredEntity(i, j,
 							new Grass(i ,j, Sprite.grass),
@@ -179,6 +190,7 @@ public class FileLevelLoader extends LevelLoader {
 
 				}
 			}
+
 		}
 
 

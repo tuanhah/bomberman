@@ -85,7 +85,7 @@ public class LayeredEntity extends Entity {
 		if (this.getTopEntity() instanceof Item && e instanceof Bomber){
 			Entity item = this.getTopEntity();
 			URL resource = getClass().getResource("/music/upgrade.mp3");
-			System.out.println(resource.getPath());
+
 			playSound(resource.getPath());
 			item.remove();
 			if (item instanceof FlameItem) ( (FlameItem) item).use();

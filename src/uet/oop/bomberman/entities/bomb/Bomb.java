@@ -82,7 +82,7 @@ public class Bomb extends AnimatedEntitiy {
 	protected void explode() {
 		_exploded = true;
 		URL resource = getClass().getResource("/music/BombBlastSound.mp3");
-		System.out.println(resource.getPath());
+
 		_board.playSound(resource.getPath());
 		
 		// TODO: xử lý khi Character đứng tại vị trí Bomb

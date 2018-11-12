@@ -94,10 +94,10 @@ public class Board implements IRender {
 	}
 	public static void playSound(String path) {
 		try {
-			com.sun.javafx.application.PlatformImpl.startup(()->{});
-			Media hit = new Media(new File(path).toURI().toString());
-			MediaPlayer mediaPlayer = new MediaPlayer(hit);
-			mediaPlayer.play();
+//			com.sun.javafx.application.PlatformImpl.startup(()->{});
+//			Media hit = new Media(new File(path).toURI().toString());
+//			MediaPlayer mediaPlayer = new MediaPlayer(hit);
+//			mediaPlayer.play();
 
 		} catch(Exception ex) {
 			System.out.println("Error with playing sound.");
@@ -136,7 +136,7 @@ public class Board implements IRender {
 	
 	public void endGame() {
 		URL resource = getClass().getResource("/music/superMarioBros-gameOver.mp3");
-		System.out.println(resource.getPath());
+//		System.out.println(resource.getPath());
 		playSound(resource.getPath());
 		_screenToShow = 1;
 		_game.resetScreenDelay();
