@@ -11,6 +11,8 @@ import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.level.Coordinates;
 
+import java.net.URL;
+
 public class Bomb extends AnimatedEntitiy {
 
 	protected double _timeToExplode = 120; //2 seconds
@@ -68,6 +70,7 @@ public class Bomb extends AnimatedEntitiy {
 	}
 	
 	public void updateFlames() {
+
 		for (int i = 0; i < _flames.length; i++) {
 			_flames[i].update();
 		}
@@ -78,6 +81,9 @@ public class Bomb extends AnimatedEntitiy {
      */
 	protected void explode() {
 		_exploded = true;
+		URL resource = getClass().getResource("/music/BombBlastSound.mp3");
+		System.out.println(resource.getPath());
+		_board.playSound(resource.getPath());
 		
 		// TODO: xử lý khi Character đứng tại vị trí Bomb
         int x = (int)_x;

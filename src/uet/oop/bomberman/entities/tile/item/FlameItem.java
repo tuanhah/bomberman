@@ -1,9 +1,13 @@
 package uet.oop.bomberman.entities.tile.item;
 
+
+import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.graphics.Sprite;
+
+import java.net.URL;
 
 public class FlameItem extends Item {
 
@@ -15,10 +19,15 @@ public class FlameItem extends Item {
 	public boolean collide(Entity e) {
 		// TODO: xử lý Bomber ăn Item
 
+
+
 		Game.addBombRadius(3);
 
 		return false;
 	}
+
+
+
 	public void use(){
 		Game.addBombRadius(1);
 	}

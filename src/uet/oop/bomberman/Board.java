@@ -120,9 +120,9 @@ public class Board implements IRender {
 			
 			_levelLoader.createEntities();
 //			playSound("/music/Renai-Circulation-Kana-Hanazawa.mp3");
-			URL resource = getClass().getResource("/music/Renai-Circulation-Kana-Hanazawa.mp3");
-			System.out.println(resource.getPath());
-			playSound(resource.getPath());
+//			URL resource = getClass().getResource("/music/Renai-Circulation-Kana-Hanazawa.mp3");
+//			System.out.println(resource.getPath());
+//			playSound(resource.getPath());
 //			System.out.println(this.getClass().getResourceAsStream("/music/Renai-Circulation-Kana-Hanazawa.mp3").toString()	);
 		} catch (LoadLevelException e) {
 			endGame();
@@ -135,6 +135,9 @@ public class Board implements IRender {
 	}
 	
 	public void endGame() {
+		URL resource = getClass().getResource("/music/superMarioBros-gameOver.mp3");
+		System.out.println(resource.getPath());
+		playSound(resource.getPath());
 		_screenToShow = 1;
 		_game.resetScreenDelay();
 		_game.pause();
@@ -145,6 +148,7 @@ public class Board implements IRender {
 		for (int i = 0; i < _characters.size(); i++) {
 			if(_characters.get(i) instanceof Bomber == false)
 				++total;
+
 		}
 		
 		return total == 0;

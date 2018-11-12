@@ -73,7 +73,6 @@ public class FlameSegment extends Entity {
 		// TODO: xử lý khi FlameSegment va chạm với Character
 		if (e instanceof Character) {
 			((Character) e).kill();
-
 		}
 
 		return true;
