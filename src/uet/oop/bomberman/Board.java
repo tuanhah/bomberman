@@ -1,5 +1,7 @@
 package uet.oop.bomberman;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.Message;
 import uet.oop.bomberman.entities.bomb.Bomb;
@@ -14,7 +16,10 @@ import uet.oop.bomberman.level.FileLevelLoader;
 import uet.oop.bomberman.level.LevelLoader;
 import uet.oop.bomberman.level.Coordinates;
 
+
 import java.awt.*;
+import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -82,9 +87,22 @@ public class Board implements IRender {
 		renderCharacter(screen);
 		
 	}
+
 	
 	public void nextLevel() {
 		loadLevel(_levelLoader.getLevel() + 1);
+	}
+	public void playSound(String path) {
+		try {
+//			com.sun.javafx.application.PlatformImpl.startup(()->{});
+//			Media hit = new Media(new File(path).toURI().toString());
+//			MediaPlayer mediaPlayer = new MediaPlayer(hit);
+//			mediaPlayer.play();
+
+		} catch(Exception ex) {
+			System.out.println("Error with playing sound.");
+			ex.printStackTrace();
+		}
 	}
 	
 	public void loadLevel(int level) {
@@ -101,6 +119,11 @@ public class Board implements IRender {
 			_entities = new Entity[_levelLoader.getHeight() * _levelLoader.getWidth()];
 			
 			_levelLoader.createEntities();
+//			playSound("/music/Renai-Circulation-Kana-Hanazawa.mp3");
+			URL resource = getClass().getResource("/music/Renai-Circulation-Kana-Hanazawa.mp3");
+			System.out.println(resource.getPath());
+			playSound(resource.getPath());
+//			System.out.println(this.getClass().getResourceAsStream("/music/Renai-Circulation-Kana-Hanazawa.mp3").toString()	);
 		} catch (LoadLevelException e) {
 			endGame();
 		}
