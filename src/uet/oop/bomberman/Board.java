@@ -94,10 +94,10 @@ public class Board implements IRender {
 	}
 	public void playSound(String path) {
 		try {
-//			com.sun.javafx.application.PlatformImpl.startup(()->{});
-//			Media hit = new Media(new File(path).toURI().toString());
-//			MediaPlayer mediaPlayer = new MediaPlayer(hit);
-//			mediaPlayer.play();
+			com.sun.javafx.application.PlatformImpl.startup(()->{});
+			Media hit = new Media(new File(path).toURI().toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(hit);
+			mediaPlayer.play();
 
 		} catch(Exception ex) {
 			System.out.println("Error with playing sound.");
