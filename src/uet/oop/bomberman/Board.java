@@ -94,10 +94,10 @@ public class Board implements IRender {
 	}
 	public static void playSound(String path) {
 		try {
-//			com.sun.javafx.application.PlatformImpl.startup(()->{});
-//			Media hit = new Media(new File(path).toURI().toString());
-//			MediaPlayer mediaPlayer = new MediaPlayer(hit);
-//			mediaPlayer.play();
+			com.sun.javafx.application.PlatformImpl.startup(()->{});
+			Media hit = new Media(new File(path).toURI().toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(hit);
+			mediaPlayer.play();
 
 		} catch(Exception ex) {
 			System.out.println("Error with playing sound.");
@@ -119,11 +119,9 @@ public class Board implements IRender {
 			_entities = new Entity[_levelLoader.getHeight() * _levelLoader.getWidth()];
 			
 			_levelLoader.createEntities();
-//			playSound("/music/Renai-Circulation-Kana-Hanazawa.mp3");
-//			URL resource = getClass().getResource("/music/Renai-Circulation-Kana-Hanazawa.mp3");
-//			System.out.println(resource.getPath());
-//			playSound(resource.getPath());
-//			System.out.println(this.getClass().getResourceAsStream("/music/Renai-Circulation-Kana-Hanazawa.mp3").toString()	);
+//			playSound("/music/start.waw");
+			URL resource = getClass().getResource("/music/start.mp3");
+			playSound(resource.getPath());
 		} catch (LoadLevelException e) {
 			endGame();
 		}
