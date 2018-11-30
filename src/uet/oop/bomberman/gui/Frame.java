@@ -37,9 +37,9 @@ public class Frame extends JFrame {
 		
 		_game.start();
 	}
-	public void setLives(int lives) {
-		_infopanel.setLives(lives);
-	}
+//	public void setLives(int lives) {
+//		_infopanel.setLives(lives);
+//	}
 	public void setTime(int time) {
 		_infopanel.setTime(time);
 	}

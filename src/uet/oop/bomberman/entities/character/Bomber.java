@@ -127,7 +127,7 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
-        _board.addLives(-1);
+//        _board.addLives(-1);
 
         Message msg = new Message("-1 LIVE", getXMessage(), getYMessage(), 2, Color.white, 14);
         _board.addMessage(msg);
@@ -140,10 +140,10 @@ public class Bomber extends Character {
         else {
             if (_bombs.size() == 0) {
 
-                if (_board.getLives() == 0)
+//                if (_board.getLives() == 0)
                     _board.endGame();
-                else
-                    _board.restartLevel();
+//                else
+//                    _board.restartLevel();
             }
         }
     }

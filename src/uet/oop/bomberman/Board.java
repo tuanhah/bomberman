@@ -42,7 +42,7 @@ public class Board implements IRender {
 	
 	private int _time = Game.TIME;
 	private int _points = Game.POINTS;
-	private int _lives = Game.LIVES;
+//	private int _lives = Game.LIVES;
 	
 	public Board(Game game, Keyboard input, Screen screen) {
 		_game = game;
@@ -385,16 +385,16 @@ public class Board implements IRender {
 	public int getPoints() {
 		return _points;
 	}
-	public int getLives() {
-		return _lives;
-	}
+//	public int getLives() {
+//		return _lives;
+//	}
 
 	public void addPoints(int points) {
 		this._points += points;
 	}
-	public void addLives(int lives) {
-		this._lives += lives;
-	}
+//	public void addLives(int lives) {
+//		this._lives += lives;
+//	}
 	
 	public int getWidth() {
 		return _levelLoader.getWidth();
