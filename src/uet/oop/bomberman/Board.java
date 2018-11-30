@@ -42,11 +42,13 @@ public class Board implements IRender {
 	
 	private int _time = Game.TIME;
 	private int _points = Game.POINTS;
+	private int _lives = Game.LIVES;
 	
 	public Board(Game game, Keyboard input, Screen screen) {
 		_game = game;
 		_input = input;
 		_screen = screen;
+
 		
 		loadLevel(1); //start in level 1
 	}
@@ -92,6 +94,10 @@ public class Board implements IRender {
 	public void nextLevel() {
 		loadLevel(_levelLoader.getLevel() + 1);
 	}
+	public void restartLevel() {
+		loadLevel(_levelLoader.getLevel());
+	}
+
 	public static void playSound(String path) {
 		try {
 			com.sun.javafx.application.PlatformImpl.startup(()->{});
@@ -379,9 +385,15 @@ public class Board implements IRender {
 	public int getPoints() {
 		return _points;
 	}
+	public int getLives() {
+		return _lives;
+	}
 
 	public void addPoints(int points) {
 		this._points += points;
+	}
+	public void addLives(int lives) {
+		this._lives += lives;
 	}
 	
 	public int getWidth() {

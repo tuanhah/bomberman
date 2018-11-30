@@ -152,7 +152,7 @@ public abstract class Enemy extends Character {
 
 		if(e instanceof Flame) {
 			kill();
-			return false;
+			return true;
 		}
 
 //		if(e instanceof Bomber) {

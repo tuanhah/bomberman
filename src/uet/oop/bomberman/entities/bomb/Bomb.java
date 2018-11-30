@@ -6,6 +6,7 @@ import uet.oop.bomberman.entities.AnimatedEntitiy;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.character.Bomber;
 import uet.oop.bomberman.entities.character.Character;
+import uet.oop.bomberman.entities.character.enemy.Enemy;
 import uet.oop.bomberman.entities.tile.destroyable.Brick;
 import uet.oop.bomberman.graphics.Screen;
 import uet.oop.bomberman.graphics.Sprite;
@@ -36,7 +37,7 @@ public class Bomb extends AnimatedEntitiy {
 			_timeToExplode--;
 		else {
 			if(!_exploded) 
-				explode();
+				explosion();
 			else
 				updateFlames();
 			
@@ -79,7 +80,11 @@ public class Bomb extends AnimatedEntitiy {
     /**
      * Xử lý Bomb nổ
      */
-	protected void explode() {
+	public void explode() {
+		_timeToExplode = 0;
+	}
+	protected void explosion() {
+		_allowedToPassThru = true;
 		_exploded = true;
 		URL resource = getClass().getResource("/music/BombBlastSound.mp3");
 
@@ -95,6 +100,7 @@ public class Bomb extends AnimatedEntitiy {
 		if (entity != null) {
 			if (entity instanceof Character) ((Character) entity).kill();
 //			if (entity instanceof Bomb) ((Bomb) entity).explode();
+//			if (entity instanceof Bomb) System.out.println("bom 2");;
 		}
 
 
@@ -132,16 +138,17 @@ public class Bomb extends AnimatedEntitiy {
 
             if(!(x >= -10 && x< 16 && y >= 1 && y <= 28)) {
                 _allowedToPassThru = false;
-            }
-
-            return _allowedToPassThru;
+            }else return _allowedToPassThru;
         }
 
         if(e instanceof Flame) {
-            explode();
+			System.out.println("s");
+        	explode();
             return true;
         }
-
-        return false;
+		if(e instanceof Enemy) {
+			return false;
+		}
+        return true;
 	}
 }

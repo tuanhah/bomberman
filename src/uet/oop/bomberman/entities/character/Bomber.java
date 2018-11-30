@@ -4,6 +4,7 @@ import uet.oop.bomberman.Board;
 import uet.oop.bomberman.Game;
 import uet.oop.bomberman.entities.Entity;
 import uet.oop.bomberman.entities.LayeredEntity;
+import uet.oop.bomberman.entities.Message;
 import uet.oop.bomberman.entities.bomb.Bomb;
 import uet.oop.bomberman.entities.bomb.Flame;
 import uet.oop.bomberman.entities.bomb.FlameSegment;
@@ -15,6 +16,7 @@ import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.input.Keyboard;
 import uet.oop.bomberman.level.Coordinates;
 
+import java.awt.*;
 import java.sql.SQLOutput;
 import java.util.Iterator;
 import java.util.List;
@@ -125,13 +127,24 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
+        _board.addLives(-1);
+
+        Message msg = new Message("-1 LIVE", getXMessage(), getYMessage(), 2, Color.white, 14);
+        _board.addMessage(msg);
     }
 
     @Override
     protected void afterKill() {
-        if (_timeAfter > 0) --_timeAfter;
+        if (_timeAfter > 0)
+            --_timeAfter;
         else {
-            _board.endGame();
+            if (_bombs.size() == 0) {
+
+                if (_board.getLives() == 0)
+                    _board.endGame();
+                else
+                    _board.restartLevel();
+            }
         }
     }
 
